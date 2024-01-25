@@ -3,10 +3,10 @@
 const url = process.argv[2];
 const request = require('request');
 
-request(url, (err, res) => {
+request(url, function (err, response, body) {
   if (err) {
     console.log(err);
   } else {
-    console.log(`code: ${res.sttatusCode}`);
+    console.log('code:', response.statusCode);
   }
 });
